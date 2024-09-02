@@ -1,0 +1,57 @@
+### Create Users
+POST http://localhost:8080/api/v1/register
+Content-Type: "application/json"
+
+{
+    "first_name" : "ichwan",
+    "last_name" : "dwi",
+    "email" : "ichwan@gmail.com",
+    "password" : "ichwan1212"
+}
+
+### Users Login
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+
+{
+    "email" : "ichwan@gmail.com",
+    "password" : "ichwan1212"
+}
+
+### Get Users By Id
+GET http://localhost:8080/api/v1/users/2
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE3MjU3NTc4NzMsInVzZXJJZCI6IjIifQ.Tn-T_LZe3zd1EO6Jd8IDv0ylcR4NBNtsoCkZ2yBOjIg
+
+
+### Create Products
+GET http://localhost:8080/api/v1/products
+Content-Type: "application/json"
+
+{
+    "name" : "MacBook Pro 14",
+    "description" : "Product of Apple Inc",
+    "image": "https://cdnpro.eraspace.com/media/catalog/product/m/a/macbook_air_m1_space_gray_1.jpg",
+    "price": 11000000,
+    "quantity": 13
+}
+
+### Create Order token =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE3MjQ5ODg2OTEsInVzZXJJZCI6IjIifQ.CsFipeGcso32uvLxdv1rTtEGCAtCmix13rv8r0CMP6Y"
+
+POST http://localhost:8080/api/v1/cart/checkout
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkQXQiOjE3MjQ5ODg2OTEsInVzZXJJZCI6IjIifQ.CsFipeGcso32uvLxdv1rTtEGCAtCmix13rv8r0CMP6Y
+
+{
+    "items" : [
+        {
+            "product_id" : 2,
+            "quantity" : 10
+        },
+        {
+            "product_id" : 3,
+            "quantity" : 10
+        }
+    ]
+}
+
+
